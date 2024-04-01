@@ -11,3 +11,9 @@
 body {
   font-family: Outfit, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+[data-theme="dark"],
+[data-theme="dark"] body {
+  color: #fff;
+  background: #242424;
+}
