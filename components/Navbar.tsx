@@ -2,9 +2,10 @@
 import React from "react";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
+
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import Link from "next/link";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -18,40 +19,34 @@ const Navbar = () => {
             <div className="relative flex h-16 items-center justify-between">
               <div className="flex items-center px-2 lg:px-0">
                 <div className="flex-shrink-0">
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
+                  {/*<img*/}
+                  {/*  className="h-8 w-auto"*/}
+                  {/*  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"*/}
+                  {/*  alt="Your Company"*/}
+                  {/*/>*/}
                 </div>
                 <ThemeSwitcher />
                 <div className="hidden lg:ml-6 lg:block">
                   <div className="flex space-x-4">
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                    <a
+                    <Link
                       href="#"
                       className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
                     >
                       Dashboard
-                    </a>
-                    <a
-                      href="#"
+                    </Link>
+                    <Link
+                      href="/sign-in"
                       className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
-                      Team
-                    </a>
-                    <a
-                      href="#"
+                      SignIn
+                    </Link>
+                    <Link
+                      href="/sign-up"
                       className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
-                      Projects
-                    </a>
-                    <a
-                      href="#"
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                    >
-                      Calendar
-                    </a>
+                      SignUp
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -117,7 +112,7 @@ const Navbar = () => {
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
-                            <a
+                            <Link
                               href="#"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
@@ -125,12 +120,12 @@ const Navbar = () => {
                               )}
                             >
                               Settings
-                            </a>
+                            </Link>
                           )}
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
-                            <a
+                            <link
                               href="#"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
@@ -138,7 +133,7 @@ const Navbar = () => {
                               )}
                             >
                               Sign out
-                            </a>
+                            </link>
                           )}
                         </Menu.Item>
                       </Menu.Items>
@@ -161,24 +156,17 @@ const Navbar = () => {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/sign-in"
                 className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
-                Team
+                SignIn
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/sign-up"
                 className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
-                Projects
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >
-                Calendar
+                SignUp
               </Disclosure.Button>
             </div>
             <div className="border-t border-gray-700 pb-3 pt-4">
