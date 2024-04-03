@@ -80,11 +80,11 @@ const Navbar = () => {
                       <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
-                        <img
-                          className="h-8 w-8 rounded-full"
-                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                          alt=""
-                        />
+                        {/*<img*/}
+                        {/*  className="h-8 w-8 rounded-full"*/}
+                        {/*  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"*/}
+                        {/*  alt=""*/}
+                        {/*/>*/}
                       </Menu.Button>
                     </div>
                     <Transition
@@ -99,7 +99,7 @@ const Navbar = () => {
                       <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <Menu.Item>
                           {({ active }) => (
-                            <a
+                            <Link
                               href="#"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
@@ -107,7 +107,7 @@ const Navbar = () => {
                               )}
                             >
                               Your Profile
-                            </a>
+                            </Link>
                           )}
                         </Menu.Item>
                         <Menu.Item>
@@ -125,7 +125,7 @@ const Navbar = () => {
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
-                            <link
+                            <Link
                               href="#"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
@@ -133,7 +133,7 @@ const Navbar = () => {
                               )}
                             >
                               Sign out
-                            </link>
+                            </Link>
                           )}
                         </Menu.Item>
                       </Menu.Items>
@@ -147,36 +147,42 @@ const Navbar = () => {
           <Disclosure.Panel className="lg:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-              >
-                Dashboard
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/sign-in"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >
-                SignIn
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/sign-up"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >
-                SignUp
-              </Disclosure.Button>
+              <Link href="/">
+                <Disclosure.Button
+                  // as="a"
+                  // href="#"
+                  className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+                >
+                  Dashboard
+                </Disclosure.Button>
+              </Link>
+              <Link href="/sign-in">
+                <Disclosure.Button
+                  // as="a"
+                  // href="/sign-in"
+                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >
+                  SignIn
+                </Disclosure.Button>
+              </Link>
+              <Link href="/sign-up">
+                <Disclosure.Button
+                  // as="a"
+                  // href="/sign-up"
+                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >
+                  SignUp
+                </Disclosure.Button>
+              </Link>
             </div>
             <div className="border-t border-gray-700 pb-3 pt-4">
               <div className="flex items-center px-5">
                 <div className="flex-shrink-0">
-                  <img
-                    className="h-10 w-10 rounded-full"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                  />
+                  {/*<img*/}
+                  {/*  className="h-10 w-10 rounded-full"*/}
+                  {/*  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"*/}
+                  {/*  alt=""*/}
+                  {/*/>*/}
                 </div>
                 <div className="ml-3">
                   <div className="text-base font-medium text-white">
@@ -196,27 +202,29 @@ const Navbar = () => {
                 </button>
               </div>
               <div className="mt-3 space-y-1 px-2">
-                <Disclosure.Button
-                  as="a"
-                  href="#"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                >
-                  Your Profile
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as="a"
-                  href="#"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                >
-                  Settings
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as="a"
-                  href="#"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                >
-                  Sign out
-                </Disclosure.Button>
+                <Link href="/">
+                  <Disclosure.Button
+                    // as="a"
+                    // href="#"
+                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                  >
+                    Your Profile
+                  </Disclosure.Button>
+                </Link>
+                {/*<Disclosure.Button*/}
+                {/*  as="a"*/}
+                {/*  href="#"*/}
+                {/*  className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"*/}
+                {/*>*/}
+                {/*  Settings*/}
+                {/*</Disclosure.Button>*/}
+                {/*<Disclosure.Button*/}
+                {/*  as="a"*/}
+                {/*  href="#"*/}
+                {/*  className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"*/}
+                {/*>*/}
+                {/*  Sign out*/}
+                {/*</Disclosure.Button>*/}
               </div>
             </div>
           </Disclosure.Panel>

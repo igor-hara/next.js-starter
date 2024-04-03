@@ -1,13 +1,16 @@
 import "../globals.css";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function AuthLayout({
   children,
-}: {
-  readonly children: React.ReactNode;
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen ">
-      {children}
-    </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>{children}</body>
+    </html>
   );
 }
